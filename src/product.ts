@@ -1,3 +1,4 @@
+import { ChannelDTO } from './channel'
 import {
   DateDTO,
   Entity,
@@ -88,7 +89,7 @@ export interface ProductTDO extends Entity, SEOFields {
   volume_unit?: Volume
   /** The volume_value of the product. */
   volume_value?: string | null
-  /** The product's Images */
-  images?: MediaTDO[] | null
   parent_id?: number | null
+  images?: MediaTDO[] | null
+  channels?: ChannelDTO[]
 }
