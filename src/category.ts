@@ -7,7 +7,7 @@ export interface CategoryDTO extends Entity, SEOFields {
   description?: string
   position?: number
   is_enabled?: boolean
-  image?: MediaTDO
+  image?: MediaTDO | null
   /** The id of the parent category. */
   parent_id?: number | null
   /** The children of the category. */

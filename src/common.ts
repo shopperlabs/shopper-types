@@ -7,11 +7,11 @@ export interface Entity {
   /** The id of the entity. */
   id: string | number
   /** The created at of the entity. */
-  created_at: DateDTO
+  created_at?: DateDTO
   /** The updated at of the entity. */
-  updated_at: DateDTO
+  updated_at?: DateDTO
   /** The deleted at of the entity. */
-  deleted_at?: DateDTO
+  deleted_at?: DateDTO | null
 }
 
 /**

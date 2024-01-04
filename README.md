@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/shopperlabs/art/blob/main/logomark.svg" alt="Shopper Logo" height="250" />
+  <img src="https://github.com/shopperlabs/art/blob/main/logomark.svg" alt="Shopper Logo" height="150" />
 </p>
 
 # Shopper Types definitions
@@ -16,5 +16,5 @@ yarn add --dev @shopper/types
 
 Import in your client project.
 ```ts
-import type { Customer } from "@shopper/types"
+import type { CustomerDTO } from "@shopper/types"
 ```
