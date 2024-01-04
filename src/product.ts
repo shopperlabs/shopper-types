@@ -1,4 +1,9 @@
-import { DateDTO, Entity, Price } from './common'
+import {
+  DateDTO,
+  Entity,
+  Price,
+  SEOFields,
+} from './common'
 import { MediaTDO } from './media'
 
 export enum ProductType {
@@ -6,12 +11,33 @@ export enum ProductType {
   DOWNLOADABLE = 'downloadable',
 }
 
+export enum Weight {
+  KG = 'kg',
+  G = 'g',
+  LBS = 'lbs',
+}
+
+export enum Length {
+  M = 'm',
+  CM = 'cm',
+  MM = 'mm',
+  FT = 'ft',
+  IN = 'in',
+}
+
+export enum Volume {
+  L = 'l',
+  ML = 'ml',
+  GAL = 'gal',
+  FLOZ = 'floz',
+}
+
 /**
  * @interface
  *
  * A product's data.
  */
-export interface ProductTDO extends Entity {
+export interface ProductTDO extends Entity, SEOFields {
   /** The name of the product.  */
   name: string
   /** The slug of the product. The slug can be used to create slug URL paths. */
@@ -42,14 +68,27 @@ export interface ProductTDO extends Entity {
   required_shipping: boolean
   /** The published at of the product */
   published_at?: DateDTO
-  /** The width of the product. */
-  width?: number | null
-  /** The weight of the product. */
-  weight?: number | null
-  /** The length of the product. */
-  length?: number | null
-  /** The height of the product. */
-  height?: number | null
+  /** The width_unit of the product. */
+  width_unit?: Length
+  /** The width_unit of the product. */
+  width_value?: number | null
+  /** The weight_unit of the product. */
+  weight_unit?: Weight
+  /** The weight_value of the product. */
+  weight_value?: number | null
+  /** The height_unit of the product. */
+  height_unit?: Length
+  /** The height_value of the product. */
+  height_value?: number | null
+  /** The depth_unit of the product. */
+  depth_unit?: Length
+  /** The depth_value of the product. */
+  depth_value?: string | null
+  /** The volume_unit of the product. */
+  volume_unit?: Volume
+  /** The volume_value of the product. */
+  volume_value?: string | null
   /** The product's Images */
   images?: MediaTDO[] | null
+  parent_id?: number | null
 }
