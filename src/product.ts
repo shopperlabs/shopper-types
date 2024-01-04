@@ -1,4 +1,5 @@
 import { ChannelDTO } from './channel'
+import { CollectionDTO } from './collection'
 import {
   DateDTO,
   Entity,
@@ -6,6 +7,7 @@ import {
   SEOFields,
 } from './common'
 import { MediaTDO } from './media'
+import { ReviewDTO } from './review'
 
 export enum ProductType {
   DELIVERABLE = 'deliverable',
@@ -39,14 +41,14 @@ export enum Volume {
  * A product's data.
  */
 export interface ProductTDO extends Entity, SEOFields {
-  /** The name of the product.  */
+  /** The name of the product. */
   name: string
   /** The slug of the product. The slug can be used to create slug URL paths. */
   slug: string | null
   /** The Stock Keeping Unit (SKU) code of the product. */
-  sku: string | null
+  sku?: string | null
   /** The barcode of the product. */
-  barcode: string | null
+  barcode?: string | null
   /** The description of the product. */
   description?: string | null
   /** The security stock of the product. */
@@ -61,13 +63,13 @@ export interface ProductTDO extends Entity, SEOFields {
   price_amount?: Price | null
   /** The cost amount of the product. */
   cost_amount?: Price | null
-  /** The type of the product */
+  /** The type of the product. */
   type: ProductType
   /** The back order of the product. */
   backorder: boolean
   /** The required shipping of the product. */
-  required_shipping: boolean
-  /** The published at of the product */
+  require_shipping: boolean
+  /** The published at of the product. */
   published_at?: DateDTO
   /** The width_unit of the product. */
   width_unit?: Length
@@ -92,4 +94,5 @@ export interface ProductTDO extends Entity, SEOFields {
   parent_id?: number | null
   images?: MediaTDO[] | null
   channels?: ChannelDTO[]
+  reviews?: ReviewDTO[]
 }
