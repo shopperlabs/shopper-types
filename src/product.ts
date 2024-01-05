@@ -1,5 +1,4 @@
 import { ChannelDTO } from './channel'
-import { CollectionDTO } from './collection'
 import {
   DateDTO,
   Entity,

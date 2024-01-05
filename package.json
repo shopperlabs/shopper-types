@@ -2,17 +2,21 @@
   "name": "@shopper/types",
   "version": "0.1.0",
   "description": "Laravel Shopper Types definitions",
-  "author": "Arthur Monney <monneylobe@gmail.com>",
+  "author": "Arthur Monney <monneylobe@gmail.com> (https://arthurmonney.me)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
-    "prepublishOnly": "cross-env NODE_ENV=production tsc --build",
     "build": "tsc --build",
     "watch": "tsc --build --watch"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "typescript": "^5.2.2"
   }
 }
