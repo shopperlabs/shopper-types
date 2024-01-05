@@ -8,7 +8,7 @@
   "homepage": "https://github.com/shopperlabs/shopper-types",
   "repository": {
     "type": "git",
-    "url": "git@github.com:shopperlabs/shopper-types.git"
+    "url": "git+ssh://git@github.com/shopperlabs/shopper-types.git"
   },
   "publishConfig": {
     "access": "public"
