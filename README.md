@@ -9,12 +9,12 @@ TypeScript types derived from the OpenAPI Spec (OAS) to be used in API clients f
 ## Install
 
 ```shell
-yarn add --dev @shopper/types
+yarn add --dev laravel-shopper-types
 ```
 
 ## How to use
 
 Import in your client project.
 ```ts
-import type { CustomerDTO } from "@shopper/types"
+import type { CustomerDTO } from "laravel-shopper-types"
 ```
