@@ -1,5 +1,5 @@
 {
-  "name": "@shopper/types",
+  "name": "laravel-shopper-types",
   "version": "0.1.0",
   "description": "Laravel Shopper Types definitions",
   "author": "Arthur Monney <monneylobe@gmail.com> (https://arthurmonney.me)",
