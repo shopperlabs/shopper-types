@@ -5,11 +5,7 @@
   "author": "Arthur Monney <monneylobe@gmail.com> (https://arthurmonney.me)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "homepage": "https://github.com/shopperlabs/shopper-types",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/shopperlabs/shopper-types.git"
-  },
+  "repository": "https://github.com/shopperlabs/shopper-types",
   "publishConfig": {
     "access": "public"
   },
