@@ -17,6 +17,9 @@
     "dist"
   ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shopperlabs/shopper-types/issues"
+  },
   "scripts": {
     "build": "tsc --build",
     "watch": "tsc --build --watch"
