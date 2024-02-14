@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "description": "Laravel Shopper Types definitions",
   "author": "Arthur Monney <monneylobe@gmail.com> (https://arthurmonney.me)",
-  "main": "index.js",
+  "main": "index.ts",
   "types": "src/index.d.ts",
   "license": "MIT",
   "repository": "https://github.com/shopperlabs/shopper-types",
