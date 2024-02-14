@@ -5,13 +5,13 @@
  */
 export interface Entity {
   /** The id of the entity. */
-  id: string | number
+  id: number
   /** The created at of the entity. */
-  created_at?: DateDTO
+  created_at?: DateEntity
   /** The updated at of the entity. */
-  updated_at?: DateDTO
+  updated_at?: DateEntity
   /** The deleted at of the entity. */
-  deleted_at?: DateDTO | null
+  deleted_at?: DateEntity | null
 }
 
 /**
@@ -19,7 +19,7 @@ export interface Entity {
  *
  * A date DTO to manage date format.
  */
-export interface DateDTO {
+export interface DateEntity {
   /** The date format of the entity. */
   date: Date
   /** the human readable date. Eg: 2 hours ago. */

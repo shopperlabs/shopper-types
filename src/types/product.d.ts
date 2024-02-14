@@ -1,12 +1,12 @@
-import { ChannelDTO } from './channel'
-import {
-  DateDTO,
+import type { Channel } from './channel'
+import type {
+  DateEntity,
   Entity,
   Price,
   SEOFields,
 } from './common'
-import { MediaTDO } from './media'
-import { ReviewDTO } from './review'
+import type { Media } from './media'
+import type { Review } from './review'
 
 export enum ProductType {
   DELIVERABLE = 'deliverable',
@@ -39,29 +39,29 @@ export enum Volume {
  *
  * A product's data.
  */
-export interface ProductTDO extends Entity, SEOFields {
+export interface Product extends Entity, SEOFields {
   /** The name of the product. */
   name: string
   /** The slug of the product. The slug can be used to create slug URL paths. */
-  slug: string | null
+  slug: string
   /** The Stock Keeping Unit (SKU) code of the product. */
   sku?: string | null
   /** The barcode of the product. */
-  barcode?: string | null
+  barcode: string | null
   /** The description of the product. */
-  description?: string | null
+  description: string | null
   /** The security stock of the product. */
-  security_stock?: number
+  security_stock: number | null
   /** The feature status of the product. This field can be used to highlight the product. */
   featured: boolean
   /** The is visible status of the product. This field can be use to disabled a product. */
   is_visible: boolean
   /** The old price amount of the product. */
-  old_price_amount?: Price | null
+  old_price_amount: Price | null
   /** The price amount of the product. */
-  price_amount?: Price | null
+  price_amount: Price | null
   /** The cost amount of the product. */
-  cost_amount?: Price | null
+  cost_amount: Price | null
   /** The type of the product. */
   type: ProductType
   /** The back order of the product. */
@@ -69,29 +69,29 @@ export interface ProductTDO extends Entity, SEOFields {
   /** The required shipping of the product. */
   require_shipping: boolean
   /** The published at of the product. */
-  published_at?: DateDTO
+  published_at: DateEntity | null
   /** The width_unit of the product. */
-  width_unit?: Length
+  width_unit: Length
   /** The width_unit of the product. */
-  width_value?: number | null
+  width_value: number | null
   /** The weight_unit of the product. */
-  weight_unit?: Weight
+  weight_unit: Weight
   /** The weight_value of the product. */
-  weight_value?: number | null
+  weight_value: number | null
   /** The height_unit of the product. */
-  height_unit?: Length
+  height_unit: Length
   /** The height_value of the product. */
-  height_value?: number | null
+  height_value: number | null
   /** The depth_unit of the product. */
-  depth_unit?: Length
+  depth_unit: Length
   /** The depth_value of the product. */
-  depth_value?: string | null
+  depth_value: string | null
   /** The volume_unit of the product. */
-  volume_unit?: Volume
+  volume_unit: Volume
   /** The volume_value of the product. */
-  volume_value?: string | null
-  parent_id?: number | null
-  images?: MediaTDO[] | null
-  channels?: ChannelDTO[]
-  reviews?: ReviewDTO[]
+  volume_value: string | null
+  parent_id: number | null
+  images?: Media[] | null
+  channels?: Channel[]
+  reviews?: Review[]
 }

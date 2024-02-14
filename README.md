@@ -16,5 +16,5 @@ yarn add --dev laravel-shopper-types
 
 Import in your client project.
 ```ts
-import type { CustomerDTO } from "laravel-shopper-types"
+import type { Customer } from "laravel-shopper-types"
 ```

@@ -1,4 +1,4 @@
-import { Entity } from './common';
+import type { Entity } from './common'
 
 export enum AddressType {
   BILLING = 'billing',
@@ -10,10 +10,10 @@ export enum AddressType {
  *
  * The Address interface
  */
-export interface AddressDTO extends Entity {
+export interface Address extends Entity {
   first_name: string
   last_name: string
-  company_name?: string | null
+  company_name: string | null
   country_code: string
   street_address: string
   street_address_plus?: string | null
@@ -24,4 +24,8 @@ export interface AddressDTO extends Entity {
   is_default: boolean
   /** The type of the customer address. */
   type: AddressType
+  /**
+   * ID of the customer this address belongs to
+   */
+  customer_id: string | null
 }

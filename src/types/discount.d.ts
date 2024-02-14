@@ -1,6 +1,6 @@
-import { Entity } from './common'
+import type { Entity } from './common'
 
-export interface DiscountDTO extends Entity {
+export interface Discount extends Entity {
   is_active: boolean
   code: string
   type: string
@@ -13,7 +13,7 @@ export interface DiscountDTO extends Entity {
   usage_limit_per_user: boolean
   total_use: number
   start_at: Date
-  end_at?: Date | null
+  end_at: Date | null
   discountable?: Discountable[]
 }
 
@@ -23,7 +23,7 @@ export enum DiscountableCondition {
 }
 
 export interface Discountable extends Entity {
-  condition?: DiscountableCondition | null
+  condition: DiscountableCondition | null
   total_use: number
   discountable_id: string | number
   discountable_type: string
