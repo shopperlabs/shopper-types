@@ -1,27 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "module": "CommonJS",
-    "lib": ["ES2022"],
-    "outDir": "dist",
-    "esModuleInterop": true,
+    "module": "Node16",
+    "lib": ["ES2022", "DOM"],
     "declaration": true,
     "declarationDir": "./src/types",
-    "emitDeclarationOnly": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "types": [],
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"],
-  "exclude": [
-    "dist",
-    "node_modules"
+  "files": [
+    "src/index.d.ts"
   ]
 }
