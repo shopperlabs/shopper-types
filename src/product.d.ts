@@ -1,3 +1,4 @@
+import { Brand } from './brand'
 import type { Channel } from './channel'
 import type {
   DateEntity,
@@ -91,6 +92,8 @@ export interface Product extends Entity, SEOFields {
   /** The volume_value of the product. */
   volume_value: string | null
   parent_id: number | null
+  brand_id: number | null
+  brand?: Brand
   images?: Media[] | null
   channels?: Channel[]
   reviews?: Review[]
