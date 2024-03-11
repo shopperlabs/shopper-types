@@ -1,6 +1,6 @@
 {
   "name": "laravel-shopper-types",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Laravel Shopper Types definitions",
   "author": "Arthur Monney <monneylobe@gmail.com> (https://arthurmonney.me)",
   "main": "index.ts",

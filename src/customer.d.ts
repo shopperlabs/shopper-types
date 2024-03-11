@@ -35,6 +35,7 @@ export interface Customer extends Entity {
   gender: GenderType
   phone_number: string | null
   birth_date: Date | null
+  email_verified_at: Date | null
   /** The avatar of the customer. */
   avatar: AvatarType
   timezone?: Date | null
