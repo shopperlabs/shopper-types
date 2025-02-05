@@ -1,4 +1,5 @@
 import type { Entity } from './common'
+import { ProductVariant } from "./product_variant";
 
 export interface Attribute extends Entity {
   name: string
@@ -17,4 +18,6 @@ export interface AttributeValue {
   value: string
   key: string
   position: number
+  attribute_id : number
+  attribute: Attribute
 }
