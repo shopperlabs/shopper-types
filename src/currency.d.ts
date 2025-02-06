@@ -1,4 +1,4 @@
-import type { Entity } from "./common";
+import type { Entity } from './common';
 
 
 export interface Currency extends Entity {

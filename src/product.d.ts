@@ -7,12 +7,12 @@ import type {
   ShippingFields,
   SEOFields,
 } from './common'
-import {Category} from "./category";
-import {Attribute} from "./attribute";
-import {Collection} from "./collection";
+import { Category } from './category';
+import { Attribute } from './attribute';
+import { Collection } from './collection';
 import type { Media } from './media'
 import type { Review } from './review'
-import {ProductVariant} from "./product_variant";
+import { ProductVariant } from './product_variant';
 
 export enum ProductType {
   External = 'external',
@@ -82,7 +82,7 @@ export interface Product extends Entity, SEOFields, ShippingFields {
   /** The reviews  of the product. */
   reviews?: Review[]
   /** The prices  of the product. */
-  prices: Price[]
+  prices?: Price[]
   /** The metadata  of the product. */
   metadata: Array<any> | null
 }

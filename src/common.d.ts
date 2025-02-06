@@ -1,4 +1,4 @@
-import {Currency} from "./currency";
+import { Currency } from './currency';
 
 export enum Weight {
   KG = 'kg',
@@ -57,18 +57,18 @@ export interface DateEntity {
 export interface Price {
   /** The original amount for the entity. */
   amount: number | null
-  /** The compare  amount for the entity. */
+  /** The compare_amount  amount for the entity. */
   compare_amount: number | null
-  /** The currency for the entity. */
+  /** The cost_amount for the entity. */
   cost_amount: number | null
-  /** The curency_code for the entity. */
+  /** The curency_id for the entity. */
   currency_id: number
   /** The curency_code for the entity. */
-  currency_code: number
-  /** The curency_code for the entity. */
+  currency_code: string
+  /** The priceable_id for the entity. */
   priceable_id: number
   /** The currenry for the entity. */
-  currency: Currency
+  currency?: Currency
 }
 
 /**
@@ -77,25 +77,25 @@ export interface Price {
  * ShippingFields interface for shipping entity.
  */
 export interface ShippingFields {
-  /** The width_unit of the product. */
+  /** The width_unit of the entity. */
   width_unit: Length
-  /** The width_unit of the product. */
+  /** The width_unit of the entity. */
   width_value: number | null
-  /** The weight_unit of the product. */
+  /** The weight_unit of the entity. */
   weight_unit: Weight
-  /** The weight_value of the product. */
+  /** The weight_value of the entity. */
   weight_value: number | null
-  /** The height_unit of the product. */
+  /** The height_unit of the entity. */
   height_unit: Length
-  /** The height_value of the product. */
+  /** The height_value of the entity. */
   height_value: number | null
-  /** The depth_unit of the product. */
+  /** The depth_unit of the entity. */
   depth_unit: Length
-  /** The depth_value of the product. */
+  /** The depth_value of the entity. */
   depth_value: number | null
-  /** The volume_unit of the product. */
+  /** The volume_unit of the entity. */
   volume_unit: Volume
-  /** The volume_value of the product. */
+  /** The volume_value of the entity. */
   volume_value: number | null
 }
 
