@@ -18,5 +18,4 @@ export interface AttributeValue {
   key: string
   position: number
   attribute_id : number
-  attribute?: Attribute
 }

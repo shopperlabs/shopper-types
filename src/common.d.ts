@@ -65,8 +65,6 @@ export interface Price {
   currency_id: number
   /** The curency_code for the entity. */
   currency_code: string
-  /** The priceable_id for the entity. */
-  priceable_id: number
   /** The currenry for the entity. */
   currency?: Currency
 }

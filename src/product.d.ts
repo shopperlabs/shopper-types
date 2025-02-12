@@ -39,8 +39,6 @@ export interface Product extends Entity, SEOFields, ShippingFields {
   description: string | null
   /** The security stock of the product. */
   security_stock: number | null
-  /** The variants stock of the product. */
-  variants_stock: number
   /** The feature status of the product. This field can be used to highlight the product. */
   featured: boolean
   /** The is visible status of the product. This field can be use to disabled a product. */
@@ -48,7 +46,7 @@ export interface Product extends Entity, SEOFields, ShippingFields {
   /** The old price amount of the product. */
   old_price_amount: Price | null
   /** The price amount of the product. */
-  price_amount: Price | null
+  price_amount: Price | null,
   /** The cost amount of the product. */
   cost_amount: Price | null
   /** The type of the product. */

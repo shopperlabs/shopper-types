@@ -1,7 +1,5 @@
 import { Entity, Price, ShippingFields } from './common'
-import { AttributeValue } from './attribute';
 import type { Media } from './media'
-import { Product } from "./product";
 
 /**
  * @interface
@@ -19,9 +17,9 @@ export interface ProductVariant extends Entity, ShippingFields
   /** The external_id of the product_variants. */
   position : number
   /** The product_id of the product_variants. */
-  product_id : number
-  /** The variants of the product_variants. */
-  product?: Product
+  product_id : number,
+  /** The enabled or disabled alolow_backorder. */
+  allow_backorder: boolean,
   /** The images of the product_variants. */
   images?: Media[] | null
   /** The prices of the product_variants. */
