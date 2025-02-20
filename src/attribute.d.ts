@@ -17,4 +17,5 @@ export interface AttributeValue {
   value: string
   key: string
   position: number
+  attribute_id : number
 }
