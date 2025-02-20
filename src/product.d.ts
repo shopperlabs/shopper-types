@@ -46,7 +46,7 @@ export interface Product extends Entity, SEOFields, ShippingFields {
   /** The old price amount of the product. */
   old_price_amount: Price | null
   /** The price amount of the product. */
-  price_amount: Price | null,
+  price_amount: Price | null
   /** The cost amount of the product. */
   cost_amount: Price | null
   /** The type of the product. */

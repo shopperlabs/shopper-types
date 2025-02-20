@@ -17,7 +17,7 @@ export interface ProductVariant extends Entity, ShippingFields
   /** The external_id of the product_variants. */
   position : number
   /** The product_id of the product_variants. */
-  product_id : number,
+  product_id : number
   /** The enabled or disabled alolow_backorder. */
   allow_backorder: boolean,
   /** The images of the product_variants. */
