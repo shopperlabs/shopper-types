@@ -8,13 +8,60 @@ TypeScript types derived from the OpenAPI Spec (OAS) to be used in API clients f
 
 ## Install
 
-```shell
-yarn add --dev laravel-shopper-types
+```bash
+npm install @shopper/types
+# or
+yarn add @shopper/types
 ```
 
-## How to use
+## Usage
 
-Import in your client project.
-```ts
-import type { Customer } from "laravel-shopper-types"
+```typescript
+import type { Product, Order, Customer } from '@shopper/types'
+
+const product: Product = {
+  id: 1,
+  name: 'My Product',
+  slug: 'my-product',
+  // ...
+}
 ```
+
+## Available Types
+
+### Models
+- `Product`
+- `ProductVariant`
+- `Category`
+- `Brand`
+- `Collection`
+- `Order`
+- `OrderItem`
+- `Customer`
+- `Address`
+- `Inventory`
+- `Discount`
+- `Review`
+- `Channel`
+- `Currency`
+- `PaymentMethod`
+- `Attribute`
+- `AttributeValue`
+- `Media`
+
+### Enums
+- `ProductType`
+- `CollectionType`
+- `CollectionCondition`
+- `AddressType`
+- `GenderType`
+- `Weight`
+- `Length`
+- `Volume`
+
+### Common Interfaces
+- `Entity`
+- `DateEntity`
+- `Price`
+- `ShippingFields`
+- `SEOFields`

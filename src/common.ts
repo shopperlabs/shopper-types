@@ -1,4 +1,4 @@
-import { Currency } from './currency';
+import type { Currency } from './currency'
 
 export enum Weight {
   KG = 'kg',
@@ -22,8 +22,6 @@ export enum Volume {
 }
 
 /**
- * @interface
- *
  * Global entity for all the models.
  */
 export interface Entity {
@@ -38,46 +36,40 @@ export interface Entity {
 }
 
 /**
- * @interface
- *
  * A date DTO to manage date format.
  */
 export interface DateEntity {
   /** The date format of the entity. */
   date: Date
-  /** the human readable date. Eg: 2 hours ago. */
+  /** The human readable date. Eg: 2 hours ago. */
   human: string
 }
 
 /**
- * @interface
- *
  * Price interface for entity.
  */
 export interface Price {
   /** The original amount for the entity. */
   amount: number | null
-  /** The compare_amount  amount for the entity. */
+  /** The compare_amount amount for the entity. */
   compare_amount: number | null
   /** The cost_amount for the entity. */
   cost_amount: number | null
-  /** The curency_id for the entity. */
+  /** The currency_id for the entity. */
   currency_id: number
-  /** The curency_code for the entity. */
+  /** The currency_code for the entity. */
   currency_code: string
-  /** The currenry for the entity. */
+  /** The currency for the entity. */
   currency?: Currency
 }
 
 /**
- * @interface
- *
  * ShippingFields interface for shipping entity.
  */
 export interface ShippingFields {
   /** The width_unit of the entity. */
   width_unit: Length
-  /** The width_unit of the entity. */
+  /** The width_value of the entity. */
   width_value: number | null
   /** The weight_unit of the entity. */
   weight_unit: Weight
@@ -98,11 +90,14 @@ export interface ShippingFields {
 }
 
 /**
- * @interface
- *
  * Seo Fields interface for entities.
  */
 export interface SEOFields {
   seo_title?: string | null
   seo_description?: string | null
 }
+
+/**
+ * Metadata type for entities.
+ */
+export type Metadata = Record<string, unknown> | null

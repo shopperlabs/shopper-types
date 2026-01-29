@@ -4,17 +4,14 @@
     "lib": ["ES2022", "DOM"],
     "declaration": true,
     "outDir": "dist",
-    "declarationDir": "./src",
+    "declarationDir": "dist",
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "types": [],
-    "noEmit": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src",
-    "index.ts"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
