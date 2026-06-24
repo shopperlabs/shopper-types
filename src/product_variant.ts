@@ -1,7 +1,21 @@
-import type { AttributeValue } from './attribute'
 import type { Entity, Metadata, Price, ShippingFields } from './common'
 import type { Media } from './media'
 import type { Product } from './product'
+
+/**
+ * A variant's option value, denormalized for the storefront (e.g. Color = Black).
+ * Used to match a selected option set to a variant and render swatches.
+ */
+export interface VariantOptionValue {
+  /** The display value (e.g. "Black"). */
+  value: string
+  /** The key identifier / swatch value (e.g. "black" or a hex color). */
+  key: string
+  /** The option name this value belongs to (e.g. "Color"). */
+  attribute: string
+  /** The option slug. */
+  attribute_slug: string
+}
 
 /**
  * ProductVariant model.
@@ -24,15 +38,19 @@ export interface ProductVariant extends Entity, ShippingFields {
   /** The product ID this variant belongs to. */
   product_id: number
   /** The stock quantity of the variant. */
-  stock: number
+  stock?: number
+  /** Whether the variant is available for purchase (in stock or backorderable). */
+  in_stock?: boolean
   /** The metadata of the product variant. */
   metadata: Metadata
   /** The product this variant belongs to. */
   product?: Product
-  /** The attribute values of this variant. */
-  values?: AttributeValue[]
+  /** The option values this variant is built from (Color = Black, Storage = 256, ...). */
+  values?: VariantOptionValue[]
   /** The images of the product variant. */
   images?: Media[] | null
+  /** The thumbnail of the product variant. */
+  thumbnail?: Media | null
   /** The prices of the product variant. */
   prices?: Price[]
 }

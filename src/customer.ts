@@ -1,5 +1,5 @@
 import type { Address } from './address'
-import type { DateEntity, Entity } from './common'
+import type { Entity } from './common'
 
 /**
  * The Gender Type for the customer.
@@ -7,15 +7,6 @@ import type { DateEntity, Entity } from './common'
 export enum GenderType {
   MALE = 'male',
   FEMALE = 'female',
-}
-
-/**
- * The Avatar interface for the customer.
- */
-export interface AvatarType {
-  type: string
-  url: string
-  default: string
 }
 
 /**
@@ -36,14 +27,18 @@ export interface Customer extends Entity {
   birth_date: Date | null
   /** The date the email was verified. */
   email_verified_at: Date | null
-  /** The avatar of the customer. */
-  avatar: AvatarType
+  /** Whether the email is verified (store API). */
+  email_verified?: boolean
+  /** The avatar URL (uploaded file, or a generated fallback). */
+  avatar: string
+  /** The avatar type: storage|avatar_ui. */
+  avatar_type: string
   /** The timezone of the customer. */
   timezone?: string | null
   /** Whether the customer has opted in to marketing. */
   opt_in: boolean
   /** The last login date. */
-  last_login_at: DateEntity | null
+  last_login_at: string | null
   /** The last login IP address. */
   last_login_ip?: string | null
   /** The customer's addresses. */

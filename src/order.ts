@@ -1,6 +1,6 @@
 import type { CarrierOption } from './carrier'
 import type { Channel } from './channel'
-import type { DateEntity, Entity, Metadata } from './common'
+import type { Entity, Metadata } from './common'
 import type { Customer } from './customer'
 import type { PaymentMethod } from './payment_method'
 import type { OrderTaxLine } from './tax'
@@ -73,10 +73,16 @@ export interface Order extends Entity {
   price_amount: number
   /** The tax amount (in cents). */
   tax_amount: number | null
+  /** The frozen shipping price charged on the order (in cents). */
+  shipping_amount?: number | null
+  /** The items total in cents ((unit price * qty) - discount, store API). */
+  total?: number
   /** The notes for the order. */
   notes: string | null
   /** The currency code for the order. */
   currency_code: string
+  /** The contact email of the order (store API). */
+  email?: string | null
   /** The order status. */
   status: OrderStatus
   /** The payment status. */
@@ -84,9 +90,9 @@ export interface Order extends Entity {
   /** The shipping status. */
   shipping_status: ShippingStatus
   /** The date the order was cancelled. */
-  cancelled_at: DateEntity | null
+  cancelled_at: string | null
   /** The date the order was archived. */
-  archived_at: DateEntity | null
+  archived_at: string | null
   /** The zone ID. */
   zone_id: number | null
   /** The shipping address ID. */
@@ -102,7 +108,7 @@ export interface Order extends Entity {
   /** The parent order ID (for split orders). */
   parent_order_id: number | null
   /** The metadata of the order. */
-  metadata: Metadata
+  metadata?: Metadata
   /** The shipping option ID. */
   shipping_option_id?: number | null
   /** The shipping option. */
@@ -113,6 +119,12 @@ export interface Order extends Entity {
   billingAddress?: OrderAddress | null
   /** The payment method. */
   paymentMethod?: PaymentMethod | null
+  /** The shipping address, when expanded through `include=shipping_address` (store API). */
+  shipping_address?: OrderAddress | null
+  /** The billing address, when expanded through `include=billing_address` (store API). */
+  billing_address?: OrderAddress | null
+  /** The payment method, when expanded through `include=payment_method` (store API). */
+  payment_method?: PaymentMethod | null
   /** The zone. */
   zone?: Zone | null
   /** The channel. */
@@ -205,12 +217,14 @@ export interface OrderAddress extends Entity {
 export interface OrderShipping extends Entity {
   /** The shipment status. */
   status: ShipmentStatus | null
+  /** The display name of the carrier (store API). */
+  carrier_name?: string | null
   /** The date the order was shipped. */
-  shipped_at: DateEntity | null
+  shipped_at: string | null
   /** The date the order was received. */
-  received_at: DateEntity | null
+  received_at: string | null
   /** The date the order was returned. */
-  returned_at: DateEntity | null
+  returned_at: string | null
   /** The tracking number. */
   tracking_number: string | null
   /** The tracking URL. */
@@ -237,7 +251,7 @@ export interface OrderShipping extends Entity {
  * OrderShippingEvent model.
  */
 export interface OrderShippingEvent {
-  id: number
+  id?: number | string
   /** The event status. */
   status: ShipmentStatus
   /** The description of the event. */
@@ -245,17 +259,17 @@ export interface OrderShippingEvent {
   /** The location of the event. */
   location: string | null
   /** The latitude of the event. */
-  latitude: number | null
+  latitude?: number | null
   /** The longitude of the event. */
-  longitude: number | null
+  longitude?: number | null
   /** The metadata of the event. */
-  metadata: Metadata
+  metadata?: Metadata
   /** The date the event occurred. */
-  occurred_at: DateEntity
+  occurred_at: string
   /** The creation date. */
-  created_at?: DateEntity
+  created_at?: string
   /** The order shipping ID. */
-  order_shipping_id: number
+  order_shipping_id?: number
   /** The shipment this event belongs to. */
   shipment?: OrderShipping
 }

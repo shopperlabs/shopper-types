@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "target": "ES2022",
+    "module": "CommonJS",
     "lib": ["ES2022", "DOM"],
     "declaration": true,
     "outDir": "dist",
@@ -12,9 +10,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "types": [],
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
