@@ -1,4 +1,4 @@
-import type { Entity, Metadata, SEOFields } from './common'
+import type { Entity, Metadata, ResourceId, SEOFields } from './common'
 import type { Media } from './media'
 import type { Product } from './product'
 
@@ -16,8 +16,8 @@ export interface Category extends Entity, SEOFields {
   is_enabled: boolean
   /** The position of the category. */
   position: number
-  /** The id of the parent category. */
-  parent_id: number | null
+  /** The public id of the parent category, null on a root category. */
+  parent_id: ResourceId | null
   /** The metadata of the category. */
   metadata: Metadata
   /** The thumbnail of the category. */
@@ -26,8 +26,23 @@ export interface Category extends Entity, SEOFields {
   parent?: Category
   /** The children categories. */
   children?: Category[]
+  /** The enabled ancestors of the category, root first. */
+  ancestors?: Category[]
   /** The products of the category. */
   products?: Product[]
-  /** The slug path of the category. */
-  slug_path?: string
+  /** The number of ancestors above the category, zero on a root. */
+  depth?: number | null
+  /** The number of distinct public products in the category subtree. */
+  products_count?: number
+}
+
+/**
+ * A node of the public category tree, children nested recursively.
+ */
+export interface CategoryTreeNode {
+  id: ResourceId
+  name: string
+  slug: string
+  position: number
+  children: CategoryTreeNode[]
 }
